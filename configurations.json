@@ -1,0 +1,39 @@
+ {
+	"webURL": "http://WEB_APPLICATIONS/",
+	"Lists": [
+		{
+			"Title":"A",
+			"TemplateType":"100",
+			"Description":"a",
+			"toBeLookedUp": true,
+			"Fields": [
+				{
+					"Type":"Text",
+					"DisplayName":"fa",
+					"Required":"False",
+					"StaticName":"fa", 
+					"Name":"fa"
+				}
+			]
+		},
+		{
+			"Title":"B",
+			"TemplateType":"100",
+			"Description":"b",
+			"toBeLookedUp": false,
+			"Fields": [
+				{
+					"Type":"Lookup",
+					"DisplayName":"fb",
+					"Required":"False",
+					"StaticName":"fb", 
+					"Name":"fb",
+					"LookUpInfo": {
+						"TargetList":"A",
+						"targetField":"fa"
+					}
+				}
+			]
+		}
+	]
+}
