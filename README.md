@@ -12,7 +12,7 @@ Each Project or set of lists that user need to create should have their own **li
 
 ### Example
 
-user need to create two list
+user need to create two lists
 
 1. List A with Title "A"
 	* Field "fa" type ``` Single Line of text ```
@@ -33,8 +33,17 @@ user need to create two list
 					"Type":"Text",
 					"DisplayName":"fa",
 					"Required":"False",
-					"StaticName":"fa", 
+					"StaticName":"fa",
 					"Name":"fa"
+				},{
+					"Type":"User",  // Or you may choose "UserMulti" for Select more than one user
+					"UserSelectionMode": "PeopleOnly", // this attribute can be set to PeopleOnly or to PeopleAndGroups
+					"Mult":"FALSE",
+					"Description" : "abcd",
+					"DisplayName":"Secretary",
+					"Required":"False",
+					"StaticName":"Secretary",
+					"Name":"Secretary"
 				}
 			]
 		},
@@ -47,7 +56,7 @@ user need to create two list
 					"Type":"Lookup",
 					"DisplayName":"fb",
 					"Required":"False",
-					"StaticName":"fb", 
+					"StaticName":"fb",
 					"Name":"Claim",
 					"LookUpInfo": {
 						"TargetList":"A",
@@ -70,7 +79,7 @@ user need to create two list
 	4. **Fields** : List of the fields that need to be added to that list
 		1. **Type** : Site column types. [Site column types and options](https://support.office.com/en-us/article/Site-column-types-and-options-0d8ddb7b-7dc7-414d-a283-ee9dca891df7?ui=en-US&rs=en-US&ad=US)
 		2. **DisplayName** : Name of the filed that will appear in the list view.
-		3. **LookUpInfo** : This Key is optional, it is used when you need to add a lookup. User need to configure the 
+		3. **LookUpInfo** : This Key is optional, it is used when you need to add a lookup. User need to configure the
 			* **TargetList** : List that list will read from
 			* **targetField** : Field that list will display.
 
