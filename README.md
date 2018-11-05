@@ -12,7 +12,59 @@ Each Project or set of lists that user need to create should have their own **li
 
 ### Example
 
-user need to create two lists
+##### basic list creation
+
+1. Create **configurations.json** file
+2. add below json configurations
+
+```json
+
+ {
+	"webURL": "http://WEB_APPLICATION_URL/",
+	"username":"USERNAME",
+	"password":"PASSWORD",
+	"domain":"DOMAIN_NAME",
+	"Lists": [
+		{
+      "Title":"IRMSNotificationSystem",
+      "TemplateType":"100",
+      "Description":"list that send notifications (email and mobile) for investors",
+      "Fields": [
+        {
+          "Type":"Text",
+          "Description" : "FIELD DESCRIPTION",
+          "DisplayName":"NAME FOR LIST COLUMN",
+          "Required":"False",
+          "StaticName":"FIELD_NAME",
+          "Name":"FIELD_NAME",
+					"NotInDefaultView": true
+        },{
+          "Type":"Note",
+          "NumLines": "6",
+          "RichText":"FALSE",
+          "Sortable":"FALSE",
+          "Description" :"FIELD DESCRIPTION",
+          "DisplayName":"",
+          "Required":"False",
+          "StaticName":"",
+          "Name":""
+        },{
+          "Type":"Boolean",
+          "Description" : "",
+          "DisplayName":"",
+          "Required":"False",
+          "StaticName":"",
+          "Name":""
+        }
+      ]
+    }
+	]
+}
+
+
+```
+
+##### user need to create two lists
 
 1. List A with Title "A"
 	* Field "fa" type ``` Single Line of text ```
@@ -23,6 +75,9 @@ user need to create two lists
 
  {
 	"webURL": "http://WEB_APPLICATION_URL/",
+	"username":"USERNAME",
+	"password":"PASSWORD",
+	"domain":"DOMAIN_NAME",
 	"Lists": [
 		{
 			"Title":"A",
