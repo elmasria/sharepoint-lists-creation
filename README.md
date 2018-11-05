@@ -24,6 +24,7 @@ Each Project or set of lists that user need to create should have their own **li
 	"username":"USERNAME",
 	"password":"PASSWORD",
 	"domain":"DOMAIN_NAME",
+	"useStaticCredentials": false,
 	"Lists": [
 		{
       "Title":"IRMSNotificationSystem",
