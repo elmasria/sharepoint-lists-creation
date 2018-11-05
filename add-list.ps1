@@ -192,8 +192,11 @@ Try {
 			if($field.Description){
 				$format  = "Description=`"$($field.Description)`""
 			}
+			if($field.Default){
+				$default  = "<Default>$($field.Default)</Default>"
+			}
 
-			[string] $FieldXML = "<Field $($format) $($min) $($mult) $($sortable) $($RichText) $($description) $($numLines) $($userSelectionMode)  DisplayName=`"$($field.DisplayName)`"  StaticName=`"$($field.StaticName)`" Name=`"$($field.Name)`"   Type=`"$($field.Type)`" />"
+			[string] $FieldXML = "<Field $($format) $($min) $($mult) $($sortable) $($RichText) $($description) $($numLines) $($userSelectionMode)  DisplayName=`"$($field.DisplayName)`"  StaticName=`"$($field.StaticName)`" Name=`"$($field.Name)`"   Type=`"$($field.Type)`">$($default)</Field>"
 
 			# Load the current list
 			$currentList = $context.Web.Lists.GetByTitle($createdList.Title)
