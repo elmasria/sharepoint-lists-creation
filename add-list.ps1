@@ -36,7 +36,7 @@ function AddField([Microsoft.SharePoint.Client.ClientContext]$targetContext,
 	[String]$targetFieldXML,
 	[String]$targetOption){
 	#create required field
-	$targetList.Fields.AddFieldAsXml($targetFieldXML, $true, $targetOption)
+	$targetList.Fields.AddFieldAsXml($targetFieldXML, $true, $targetOption)  | Out-Null
 	$targetList.Update()
 	$targetContext.ExecuteQuery()
 }
@@ -188,6 +188,9 @@ Try {
 			}
 			if($field.Format){
 				$format  = "Format=`"$($field.Format)`""
+			}
+			if($field.Description){
+				$format  = "Description=`"$($field.Description)`""
 			}
 
 			[string] $FieldXML = "<Field $($format) $($min) $($mult) $($sortable) $($RichText) $($description) $($numLines) $($userSelectionMode)  DisplayName=`"$($field.DisplayName)`"  StaticName=`"$($field.StaticName)`" Name=`"$($field.Name)`"   Type=`"$($field.Type)`" />"
