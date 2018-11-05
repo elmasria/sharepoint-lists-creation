@@ -1,1 +1,3 @@
 *.log
+configurations.json
+configurations-old.json
